@@ -20,22 +20,48 @@ export const ProductCard = ({ product }: Props) => {
 
     return (
         <Grid item
-            xs={6}
-            sm={4}
+            xs={12}
+            sm={3}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-            <Card>
+            <Card
+                sx={{
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'space-between',
+                    boxShadow: 'none',
+                    border: '1px solid #e0e0e0',
+                    borderRadius: '10px',
+                    transition: 'all 0.3s ease',
+                    marginBottom: '25px',
+                    paddingBottom: '10px',
+                    '&:hover': {
+                        boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.2)',
+                        border: '1px solid #e0e0e0',
+                        borderRadius: '10px',
+                    }
+                }}
+            >
 
                 <Link
                     href={`/product/${product.id}`}
                     sx={{ textDecoration: 'none' }}
                 >
-                    <CardActionArea>
+                    <CardActionArea
+                        sx={{
+                            hover: {
+                                opacity: 0.8,
+                                backgroundColor: 'transparent',
+                                boxShadow: 'none',
+                            }
+                        }}
+                    >
                         {
                             product.imagen1 && product.imagen2 ? (
                                 <Image
-                                    src={productImage}
+                                    src={productImage as string}
                                     alt={product.nombre}
                                     width={450}
                                     height={400}
@@ -44,6 +70,7 @@ export const ProductCard = ({ product }: Props) => {
                                     quality={100}
                                     objectFit='cover'
                                     objectPosition='center'
+
                                 />
                             ) : (
                                 <Typography>Sin imagen</Typography>
@@ -51,12 +78,21 @@ export const ProductCard = ({ product }: Props) => {
                         }
                     </CardActionArea>
                 </Link>
+                <Box
+                    sx={{ mt: 1, justifyContent: 'center', alignContent: 'center' }}
+                >
+                    <Typography
 
+                        sx={{
+                            fontSize: 'sm: 14px, md: 16px, lg: 18px, xl: 50px',
+                            marginLeft: '25px',
+                        }}
+                    >
+                        {`$${product.precio}`}
+                    </Typography>
+                </Box>
             </Card>
-            <Box sx={{ mt: 1 }} className='fadeIn'>
-                <Typography fontWeight={700}>{product.nombre}</Typography>
-                <Typography fontWeight={500}>{`$${product.precio}`}</Typography>
-            </Box>
+
         </Grid>
     )
 }

@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Head from 'next/head';
 
 import { Navbar, SideMenu } from '../ui';
+import { Box } from '@mui/material';
 
 
 interface Props {
@@ -12,12 +13,16 @@ interface Props {
 
 export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageFullUrl }) => {
     return (
-        <>
+        <Box
+            sx={{
+                background: '#F5F5F5',
+            }}
+        >
             <Head>
                 <title>{title}</title>
 
                 <meta name="description" content={pageDescription} />
-
+                <link rel="icon" href="/logo.png" />
 
                 <meta name="og:title" content={title} />
                 <meta name="og:description" content={pageDescription} />
@@ -37,9 +42,10 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
             <SideMenu />
 
             <main style={{
-                margin: '150px auto',
+                margin: 'auto',
                 maxWidth: '1440px',
-                padding: '0px 30px'
+                padding: '110px 30px',
+
             }}>
                 {children}
             </main>
@@ -49,7 +55,7 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
                 {/* TODO: mi custom footer */}
             </footer>
 
-        </>
+        </Box >
     )
 }
 

@@ -17,14 +17,32 @@ interface Props {
 const ProductPage = ({ product }: Props) => {
     return (
         <ShopLayout title={product.nombre} pageDescription={product.descripcion}>
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={7}>
+            <Grid
+                container
+                spacing={3}
+                style={{
+                    margin: '0px auto',
+                    paddingTop: '50px',
+                    maxWidth: '1440px',
+                    background: 'white',
+                    padding: '30px',
+                    borderRadius: '10px',
+                }}
+            >
+                <Grid
+                    item
+                    xs={12}
+                    sm={7}>
                     <ProductSlideshow
                         product={product}
                     />
                 </Grid>
                 <Grid item xs={12} sm={5}>
-                    <Box display='flex' flexDirection='column'>
+                    <Box display='flex' flexDirection='column' sx={{
+                        height: '100%',
+                        padding: '50px',
+                        width: '90%',
+                    }}>
                         <Typography
                             variant='subtitle2'
                             color='gray'
@@ -55,6 +73,12 @@ const ProductPage = ({ product }: Props) => {
                             component='h2'
                             sx={{ mt: 2, fontSize: 40 }}
                         >{`$${product.precio}`}</Typography>
+                        <Typography
+                            variant='subtitle2'
+                            component='h4'
+                            color="success.main"
+                            sx={{ mt: 1, fontSize: 15 }}
+                        >Mismo precio en 6 cuotas de $16583</Typography>
                         {/* Cantidad */}
                         <Box sx={{ my: 2 }}>
                             <Typography variant='subtitle2'>Cantidad</Typography>

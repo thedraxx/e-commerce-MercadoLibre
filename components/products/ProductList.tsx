@@ -8,18 +8,17 @@ interface Props {
 }
 
 export const ProductList: FC<Props> = ({ products }) => {
-
-
-
     return (
         <Grid
             container
-            spacing={4}
+            spacing={5}
             sx={{
-                mt: 2,
-                mb: 2,
+                mt: 1,
+                mb: 1,
+
             }}
         >
+
             {
                 products.map(p => (
                     <ProductCard
@@ -28,6 +27,8 @@ export const ProductList: FC<Props> = ({ products }) => {
                     />
                 ))
             }
+
+
         </Grid>
     )
 }
