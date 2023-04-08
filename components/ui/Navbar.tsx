@@ -1,9 +1,14 @@
 import NextLink from 'next/link';
 import { AppBar, Badge, Box, Button, FormControl, IconButton, Input, InputLabel, Link, ListItem, Stack, Toolbar, Typography } from '@mui/material';
-import { CardTravelOutlined, ContactMailOutlined, GpsFixed, GpsFixedOutlined, GpsFixedSharp, ImportContactsOutlined, Label, LabelRounded, MenuOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { CardTravelOutlined, ContactMailOutlined, GpsFixed, GpsFixedOutlined, GpsFixedSharp, GpsNotFixedRounded, ImportContactsOutlined, Label, LabelRounded, LocationOnOutlined, MenuOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import Image from 'next/image';
+import { useContext } from 'react';
+import { SideMenuContext } from '../../context';
 
 export const Navbar = () => {
+
+    const { isOpen, handleOpen } = useContext(SideMenuContext)
+
     return (
         <Stack
             spacing={2}
@@ -26,7 +31,7 @@ export const Navbar = () => {
                     flexDirection: 'row',
                     alignItems: 'center',
                     justifyContent: { xs: 'space-between', sm: 'space-between', md: 'center', lg: 'center' },
-                    padding: '5px',
+                    padding: '0px',
                     width: '100%',
                 }}
 
@@ -34,48 +39,53 @@ export const Navbar = () => {
 
 
                 {/* LOGO */}
-                <Box
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        padding: '0px',
-                    }}
+                <Link
+                    href="/" underline="none"
                 >
 
-                    <Image
-                        src="/logo.png"
-                        alt="logo"
-                        width={50}
-                        height={40}
-                    />
                     <Box
                         sx={{
                             display: 'flex',
-                            flexDirection: 'column',
+                            flexDirection: 'row',
                             alignItems: 'left',
-                            marginLeft: '10px',
+                            padding: '0px',
                         }}
                     >
-                        <Image
-                            src="/Subtract.png"
-                            alt="logo"
-                            width={80}
-                            height={20}
-                            objectFit='contain'
-                        />
-                        <Image
-                            src="/Subtract(1).png"
-                            alt="logo"
-                            width={45}
-                            height={20}
-                            objectFit='contain'
-                        />
 
+                        <Image
+                            src="/logo.png"
+                            alt="logo"
+                            width={50}
+                            height={35}
+                        />
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'left',
+                                marginLeft: '10px',
+                                justifyContent: 'left',
+                            }}
+                        >
+                            <Image
+                                src="/Subtract.png"
+                                alt="logo"
+                                width={80}
+                                height={18}
+                                objectFit='contain'
+                            />
+                            <Image
+                                src="/Subtract(1).png"
+                                alt="logo"
+                                width={30}
+                                height={15}
+                                objectFit='contain'
+
+                            />
+
+                        </Box>
                     </Box>
-                </Box>
-
+                </Link>
                 {/* LABEL INPUT */}
                 <Box >
                     <InputLabel
@@ -84,7 +94,7 @@ export const Navbar = () => {
                             display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' },
                             alignItems: 'center',
                             justifyContent: 'center',
-                            padding: '5px',
+                            padding: '0px',
                             marginRight: '50px',
                             marginLeft: '50px',
                         }}
@@ -140,7 +150,7 @@ export const Navbar = () => {
                         <Image
                             src="/disney.webp"
                             alt="logo"
-                            width={320}
+                            width={340}
                             height={50}
                             objectFit='contain'
                         />
@@ -153,7 +163,9 @@ export const Navbar = () => {
                             display: { xs: 'flex', sm: 'flex', md: 'none', lg: 'none' },
                         }}
                     >
-                        <Button>
+                        <Button
+                            onClick={handleOpen}
+                        >
                             <MenuOutlined />
 
                         </Button>
@@ -177,12 +189,14 @@ export const Navbar = () => {
                         flexDirection: 'row',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        marginLeft: '50px',
-                        marginRight: '50px',
+                        marginLeft: '5rem',
+                        marginRight: '5rem',
 
                     }}
                 >
-                    <GpsFixedSharp />
+                    <LocationOnOutlined
+                        fontSize='medium'
+                    />
 
                     <Box
                         sx={{
@@ -192,10 +206,10 @@ export const Navbar = () => {
                             marginLeft: '10px',
                         }}
                     >
-                        <Typography variant="subtitle2" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                        <Typography variant="subtitle2" sx={{ marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 11 }}>
                             Enviar a
                         </Typography>
-                        <Typography variant="subtitle2" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                        <Typography variant="subtitle2" sx={{ marginLeft: '5px', marginRight: '5px', fontWeight: 500, fontSize: 12 }}>
                             Capital Federal
                         </Typography>
                     </Box>
@@ -211,25 +225,25 @@ export const Navbar = () => {
                     }}
 
                 >
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Categoria
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Ofertas
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Historial
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Supermercado
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Moda
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Vender
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" color={'gray'} sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 12 }}>
                         Ayuda
                     </Typography>
                 </Box>
@@ -245,13 +259,13 @@ export const Navbar = () => {
                     }}
 
                 >
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 13 }}>
                         Crea tu cuenta
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 13 }}>
                         ingresa
                     </Typography>
-                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px' }}>
+                    <Typography variant="subtitle2" component="div" sx={{ flexGrow: 1, marginLeft: '5px', marginRight: '5px', fontWeight: 400, fontSize: 13 }}>
                         Mis compras
                     </Typography>
 
@@ -263,7 +277,12 @@ export const Navbar = () => {
                             marginLeft: '10px',
                         }}
                     >
-                        <CardTravelOutlined />
+                        <ShoppingCartOutlined
+                            fontSize='medium'
+                            sx={{
+                                color: 'gray',
+                            }}
+                        />
 
 
                     </Box>

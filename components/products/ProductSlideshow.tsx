@@ -1,75 +1,113 @@
-import React, { FC, useState, useEffect } from 'react';
-import { Slide } from 'react-slideshow-image';
-
+import React, { useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
-import styles from './ProductSlideshow.module.css';
 import { IProduct } from '../../interfaces';
-
+import Image from 'next/image';
+import { Box, Button } from '@mui/material';
+import Zoom from '@mui/material/Zoom';
 interface Props {
     product: IProduct;
 }
 
-export const ProductSlideshow: FC<Props> = ({ product }: Props) => {
+export const ProductSlideshow = ({ product }: Props) => {
+
+    const [counterImage, setCounterImage] = useState(0);
 
 
-    const [arrayImages, setArrayImages] = useState<string[]>([]);
+    const manageImage = (index: number) => {
+        console.log(index);
+        setCounterImage(index);
+    }
 
-    console.log('arrayImages', arrayImages)
-
-    useEffect(() => {
-
-        if (product.imagen1 !== '') {
-            setArrayImages([...arrayImages, product.imagen1] as string[]);
-        }
-
-        if (product.imagen2 !== '') {
-            setArrayImages([...arrayImages, product.imagen2] as string[]);
-        }
-
-        if (product.imagen3 !== '') {
-            setArrayImages([...arrayImages, product.imagen3] as string[]);
-        }
-
-        if (product.imagen4 !== '') {
-            setArrayImages([...arrayImages, product.imagen4] as string[]);
-        }
-
-
-    }, [product])
 
     return (
-        <Slide
-            easing="ease"
-            duration={7000}
-            indicators
-
+        <Box
+            sx={{
+                width: '100%',
+                height: '100%',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                bgcolor: 'background.paper',
+                overflow: 'hidden',
+            }}
         >
-            {
-                [product.imagen1, product.imagen2, product.imagen3, product.imagen4].map(image => {
-                    console.log('', image)
-                    return (
-                        <div
-                            className={styles['each-slide']}
-                            key={image}
-
-                        >
-                            <div
-                                style={{
-                                    backgroundImage: `url(${image})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    height: '100%',
-                                    width: '100%',
-                                    backgroundRepeat: 'no-repeat',
-
-                                }}>
-                            </div>
-                        </div>
-                    )
-
-                })
-            }
-
-        </Slide>
+            <Box
+                sx={{
+                    width: '100%',
+                    height: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    bgcolor: 'background.paper',
+                    flexDirection: 'row',
+                }}
+            >
+                <Box
+                    sx={{
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        justifyContent: 'top',
+                        alignItems: 'center',
+                        bgcolor: 'background.paper',
+                        flexDirection: 'column',
+                    }}
+                >
+                    {
+                        [product.imagen1, product.imagen2, product.imagen3, product.imagen4].map((image, index) => {
+                            return (
+                                <Box
+                                    key={index}
+                                    sx={{
+                                        objectFit: 'container',
+                                        marginTop: '10px',
+                                        marginBottom: '10px',
+                                        display: 'flex',
+                                        justifyContent: 'left',
+                                        alignItems: 'left',
+                                        bgcolor: 'background.paper',
+                                        flexDirection: 'column',
+                                        borderRadius: '10px',
+                                        border: '1px solid #e0e0e0',
+                                    }}
+                                >
+                                    <Button
+                                        onClick={() => manageImage(index)}
+                                        sx={{
+                                            width: '100%',
+                                            height: '100%',
+                                            display: 'flex',
+                                            justifyContent: 'left',
+                                            alignItems: 'left',
+                                            bgcolor: 'background.paper',
+                                            flexDirection: 'column',
+                                            borderRadius: '10px',
+                                            border: '1px solid #e0e0e0',
+                                        }}
+                                    >
+                                        <Image
+                                            objectFit='contain'
+                                            alt='imagen del producto'
+                                            src={image || ''}
+                                            width={50}
+                                            height={60}
+                                        />
+                                    </Button>
+                                </Box>
+                            )
+                        })
+                    }
+                </Box>
+                <Image
+                    src={
+                        [product.imagen1, product.imagen2, product.imagen3, product.imagen4][counterImage] || ''
+                    }
+                    alt={product.nombre}
+                    width={2000}
+                    height={2000}
+                    objectFit='contain'
+                />
+            </Box>
+        </Box>
     )
 }

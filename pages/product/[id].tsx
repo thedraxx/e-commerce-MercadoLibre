@@ -1,4 +1,4 @@
-import { Box, Grid, List, ListItem, Typography, ListItemText } from '@mui/material';
+import { Box, Grid, List, ListItem, Typography, ListItemText, MenuItem, Button } from '@mui/material';
 import { ShopLayout } from '../../components/layouts';
 import { ProductSlideshow } from '../../components/products';
 import { GetStaticPaths } from 'next'
@@ -23,27 +23,34 @@ const ProductPage = ({ product }: Props) => {
                 container
                 spacing={2}
                 style={{
-                    margin: '0px auto',
-                    paddingTop: '50px',
+                    marginTop: '100px',
                     maxWidth: '1440px',
                     background: 'white',
-                    padding: '30px',
                     borderRadius: '10px',
                 }}
             >
                 <Grid
                     item
                     xs={12}
-                    sm={5}>
+                    sm={12}
+                    md={12}
+                    lg={5}
+                >
                     <ProductSlideshow
                         product={product}
                     />
                 </Grid>
-                <Grid item xs={12} sm={4}>
+                <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    md={12}
+                    lg={4}
+                >
                     <Box display='flex' flexDirection='column' sx={{
                         height: '100%',
-                        padding: '50px',
-                        width: '90%',
+                        padding: { xs: 0, sm: 0, md: 0, lg: '50px' },
+                        width: '100%',
                     }}>
                         <Typography
                             variant='subtitle2'
@@ -51,13 +58,13 @@ const ProductPage = ({ product }: Props) => {
                             sx={{ mb: 1 }}
 
                         >
-                            Nuevo   |    0 vendidos
+                            Nuevo   |    +5 mil vendidos
                         </Typography>
                         {/* titulos */}
                         <Typography
                             variant='h2'
                             component='h2'
-                            sx={{ mb: 1, fontWeight: 700 }}
+                            sx={{ mb: 1, fontWeight: 500, fontSize: 20 }}
                         >{product.nombre}
                         </Typography>
                         <Box
@@ -68,15 +75,15 @@ const ProductPage = ({ product }: Props) => {
                                 mb: 1,
                             }}
                         >
-                            <Star sx={{ color: '#075eff' }} />
-                            <Star sx={{ color: '#075eff' }} />
-                            <Star sx={{ color: '#075eff' }} />
-                            <Star sx={{ color: '#075eff' }} />
-                            <Star sx={{ color: '#075eff' }} />
+                            <Star sx={{ color: '#367dff' }} />
+                            <Star sx={{ color: '#367dff' }} />
+                            <Star sx={{ color: '#367dff' }} />
+                            <Star sx={{ color: '#367dff' }} />
+                            <Star sx={{ color: '#367dff' }} />
                             <Typography
                                 variant='subtitle2'
                                 component='h4'
-                                color='#075eff'
+                                color='#367dff'
                                 sx={{ ml: 1 }}
                             >(829)</Typography>
                         </Box>
@@ -95,36 +102,74 @@ const ProductPage = ({ product }: Props) => {
                                 variant='subtitle2'
                                 component='h5'
                                 color='white'
-                                sx={{ bgcolor: '#fa9034', pl: 1, pr: 1, borderRadius: 1, width: 'fit-content' }}
+                                sx={{ bgcolor: '#ff7700', padding: 0, pl: 0.5, pr: 0.5, borderRadius: 0.5, width: 'fit-content' }}
                             >
                                 Mas Vendido
                             </Typography>
                             <Typography
                                 variant='subtitle2'
                                 component='h5'
-                                color='#075eff'
+                                color='#367dff'
                                 sx={{ ml: 1, pl: 1, pr: 1, borderRadius: 1, width: 'fit-content' }}
                             >
                                 3º en Consolas
                             </Typography>
                         </Box>
                         <Typography
-                            variant='h2'
-                            component='h2'
-                            sx={{ mt: 2, fontSize: 40 }}
+                            variant='h5'
+                            sx={{ mt: 2, fontSize: 35, fontWeight: 200 }}
                         >{`$${product.precio}`}</Typography>
                         <Typography
                             variant='subtitle2'
                             component='h4'
                             color="#00A650"
-                            sx={{ mt: 1, fontSize: 15 }}
-                        >Mismo precio en 6 cuotas de $16583</Typography>
-                        {/* Cantidad */}
+                            sx={{ mt: 1, fontSize: 15, fontWeight: 100 }}
+                        >Mismo precio en 6 cuotas de $16583
+                        </Typography>
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                alignContent: "center",
+                                justifyItems: "center",
+                                mb: 1,
+
+                            }}
+                        >
+                            <Typography
+                                variant='subtitle2'
+                                component='h4'
+                                color="#00A650"
+                                sx={{ mt: 1, fontSize: 14, fontWeight: 400 }}
+                            >Duplica puntos:
+                            </Typography>
+
+                            <Typography
+                                variant='subtitle2'
+                                component='h4'
+                                color="#000000"
+                                sx={{ mt: 1, fontSize: 14, fontWeight: 400, ml: 0.2 }}
+                            >
+                                sumas 2570 Mercado Puntos
+                            </Typography>
+                        </Box>
+
+                        <Typography
+                            variant='subtitle2'
+                            component='h4'
+                            color="#367dff"
+                            sx={{ mt: 1, fontSize: 14, fontWeight: 400, ml: 0.2 }}
+                        > Ver los medios de pago
+                        </Typography>
+
+
                         <Typography
                             variant='subtitle2'
                             component='h5'
                             color='white'
-                            sx={{ bgcolor: '#075eff', pl: 1, pr: 1, borderRadius: 2, width: 'fit-content', mt: 1, mb: 1, }}
+                            sx={{ bgcolor: '#367dff', pl: 1, pr: 1, borderRadius: 1, width: 'fit-content', mt: 1, mb: 1, }}
                         >
                             Oferta del Dia
                         </Typography>
@@ -159,15 +204,16 @@ const ProductPage = ({ product }: Props) => {
 
                     </Box>
                 </Grid>
-
-
                 <Grid
                     item
                     xs={12}
-                    sm={3}
+                    sm={12}
+                    md={12}
+                    lg={3}
                     sx={{
                         border: '1px solid #e0e0e0',
                         borderRadius: '10px',
+                        marginBottom: '30px',
                     }}
                 >
                     <Box
@@ -177,13 +223,19 @@ const ProductPage = ({ product }: Props) => {
                             alignItems: 'left',
                             alignContent: "left",
                             justifyItems: "left",
-                            width: '80%',
-                            marginTop: '50px',
+                            width: '100%',
+                            marginTop: '30px',
                             background: 'white',
-                            padding: '10px',
+                            padding: '0px',
                         }}
                     >
-                        <TravelExploreOutlined color='#00A650' />
+                        <TravelExploreOutlined
+                            style={{
+                                color: '#05ab55',
+                                fontSize: '30px',
+                                marginLeft: '0px',
+                            }}
+                        />
                         <Box
                             sx={{
                                 display: 'flex',
@@ -219,14 +271,18 @@ const ProductPage = ({ product }: Props) => {
                             alignItems: 'left',
                             alignContent: "left",
                             justifyItems: "left",
-                            width: '80%',
+                            width: '100%',
                             marginTop: '20px',
-                            padding: '10px',
                             background: 'white',
+                            padding: '0px',
                         }}
                     >
                         <HouseOutlined
-                            color='#00A650'
+                            style={{
+                                color: '#00A650',
+                                fontSize: '30px',
+                                marginLeft: '0px',
+                            }}
                         />
                         <Box
                             sx={{
@@ -247,13 +303,199 @@ const ProductPage = ({ product }: Props) => {
                             <Typography
                                 variant='subtitle2'
                                 component='h6'
-                                color='#075eff'
+                                color='#367dff'
                                 sx={{ ml: 1 }}
                             >
                                 Más información
                             </Typography>
                         </Box>
                     </Box>
+
+                    <Box
+                        sx={{
+                            mt: 2,
+                            ml: { xs: 2, sm: 2, md: 2, lg: 0 },
+                        }}
+                    >
+
+
+                        <Typography
+                            variant='h2'
+                            color='black'
+                            sx={{ mt: 1, fontSize: 14 }}
+                        >
+                            Vendido por   <a href="https://www.mercadolibre.com.ar/perfil/MLA1530009" target="_blank" rel="noreferrer">MERCADOLIBRE</a>
+                        </Typography>
+
+                        <Typography
+                            variant='h2'
+                            color='black'
+                            sx={{ mt: 0.7, fontSize: 13 }}
+                        >
+                            MercadoLider | +10mil ventas
+                        </Typography>
+
+                        <Typography
+                            variant='subtitle2'
+                            component='h5'
+                            color='gray'
+                            sx={{ mt: 0.5, fontSize: 13, fontWeight: 400 }}
+                        >
+                            Hace Factura A
+                        </Typography>
+
+                        <Typography
+                            variant='subtitle2'
+                            component='h5'
+                            color='black'
+                            sx={{ mt: 4, fontSize: 16 }}
+                        >
+                            Stock disponible
+                        </Typography>
+
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'row',
+                                alignItems: 'center',
+                                alignContent: "center",
+                                justifyItems: "center",
+                                width: '100%',
+                            }}
+                        >
+
+                            <Typography
+                                variant='h5'
+                                component='h5'
+                                color='black'
+                                sx={{ mt: 4, fontSize: 16 }}
+                            >
+                                Cantidad:
+                            </Typography>
+
+
+
+                            <MenuItem value={1}>
+                                <Typography
+                                    variant='subtitle2'
+                                    component='h5'
+                                    color='black'
+                                    sx={{ mt: 4, fontSize: 14, ml: 1 }}
+                                >
+                                    1 unidad
+                                </Typography>
+
+
+                            </MenuItem>
+
+                            <Typography
+                                variant='subtitle2'
+                                component='h5'
+                                color='black'
+                                sx={{ mt: 4, fontSize: 14, ml: 1 }}
+                            >
+                                10 disponibles
+                            </Typography>
+
+
+                        </Box>
+
+                        <Box
+                            sx={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                alignItems: 'center',
+                                alignContent: "center",
+                                justifyItems: "center",
+                                width: '100%',
+                            }}
+                        >
+                            <Button
+                                variant='contained'
+                                sx={{
+                                    mt: 2,
+                                    background: '#367dff',
+                                    color: 'white',
+                                    paddingLeft: '80px',
+                                    paddingRight: '80px',
+                                }}
+                            >
+                                <Typography
+                                    variant='subtitle2'
+                                    component='h5'
+                                    color='white'
+                                    sx={{ fontSize: 14, padding: '10px' }}
+                                >
+                                    Comprar Ahora
+                                </Typography>
+                            </Button>
+
+                            <Button
+                                variant='contained'
+                                sx={{
+                                    mt: 2,
+                                    background: '#dae8ff',
+                                    color: 'white',
+                                    paddingLeft: '80px',
+                                    paddingRight: '80px',
+                                }}
+                            >
+                                <Typography
+                                    variant='subtitle2'
+                                    component='h5'
+                                    color='#367dff'
+                                    sx={{ fontSize: 14, padding: '10px' }}
+                                >
+                                    Agregar al carrito
+                                </Typography>
+                            </Button>
+
+
+                        </Box>
+
+
+                        <Box>
+                            <Typography
+                                variant='h2'
+                                color='gray'
+                                sx={{ mt: 4, fontSize: 14 }}
+                            >
+                                Devolucion gratis. Tenes 30 dias desde que lo recibis.
+                            </Typography>
+
+                            <Typography
+                                variant='h2'
+                                color='gray'
+                                sx={{ mt: 4, fontSize: 14 }}
+                            >
+                                Compra Protegida, recibi el producto que esperabas o te devolvemos tu dinero.
+                            </Typography>
+
+                            <Typography
+                                variant='h2'
+                                color='gray'
+                                sx={{ mt: 4, fontSize: 14 }}
+                            >
+                                Mercado Puntos, sumas 1.000 puntos.
+                            </Typography>
+
+                            <Typography
+                                variant='h2'
+                                color='gray'
+                                sx={{ mt: 4, fontSize: 14 }}
+                            >
+                                12 meses de garantia por defecto de fabrica.
+                            </Typography>
+
+
+                        </Box>
+
+
+
+                    </Box>
+
+
 
 
                 </Grid>
@@ -273,9 +515,6 @@ const ProductPage = ({ product }: Props) => {
 }
 
 export default ProductPage
-
-
-
 
 export const getStaticPaths: GetStaticPaths = async (ctx) => {
     const ProductsList = await axios.get(`${process.env.API_GOOGLE}`, {

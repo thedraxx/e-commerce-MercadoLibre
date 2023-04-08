@@ -1,4 +1,4 @@
-import { AddRounded, CardTravelOutlined, CreditCard, CreditCardOff, CreditCardOutlined, CreditCardRounded, HandymanSharp, MoneyOutlined, MoneyTwoTone, PlusOne } from '@mui/icons-material'
+import { AddRounded, CreditCard, CreditCardRounded } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material';
 import React from 'react'
 
@@ -8,7 +8,7 @@ export const Payments = () => {
             sx={{
                 width: '100%',
                 height: '100%',
-                display: 'flex',
+                display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' },
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' },

@@ -6,6 +6,7 @@ import axios from 'axios';
 import { GetStaticProps } from 'next'
 import { IProduct } from '../interfaces';
 import { Banner, Payments } from '../components/ui';
+import { SideMenuProvider } from '../context';
 interface props {
   productos: IProduct[]
 }
@@ -13,15 +14,17 @@ interface props {
 const Home = ({ productos }: props) => {
 
   return (
-    <ShopLayout title={'MercadoLibre - Clon'} pageDescription={'Trabajo personal hecho a modo de practica'}>
-      <Banner />
-      <Payments />
-      <Typography variant='h1' component='h1'>Ofertas</Typography>
-      <Typography variant='h2' sx={{ mb: 1 }}>Todos los productos</Typography>
-      <ProductList
-        products={productos}
-      />
-    </ShopLayout>
+    <SideMenuProvider>
+      <ShopLayout title={'MercadoLibre - Clon'} pageDescription={'Trabajo personal hecho a modo de practica'}>
+        <Banner />
+        <Payments />
+        <Typography variant='h1' component='h1'>Ofertas</Typography>
+        <Typography variant='h2' sx={{ mb: 1 }}>Todos los productos</Typography>
+        <ProductList
+          products={productos}
+        />
+      </ShopLayout>
+    </SideMenuProvider>
   )
 }
 
