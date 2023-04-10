@@ -1,11 +1,14 @@
 import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
-import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, LoginOutlined, MaleOutlined, SearchOutlined, VpnKeyOutlined } from "@mui/icons-material"
+import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, CheckroomOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, GroupAddOutlined, HelpCenterOutlined, LocalGroceryStoreOutlined, LocalOfferOutlined, LoginOutlined, MaleOutlined, SearchOutlined, StoreOutlined, Storefront, StorefrontOutlined, VpnKeyOutlined } from "@mui/icons-material"
 import { useContext } from "react"
 import { SideMenuContext } from "../../context"
 
 
 export const SideMenu = () => {
     const { isOpen, handleOpen } = useContext(SideMenuContext)
+
+    console.log(isOpen)
+
     return (
         <Drawer
             open={isOpen}
@@ -38,79 +41,64 @@ export const SideMenu = () => {
 
                     <ListItem button>
                         <ListItemIcon>
+                            <GroupAddOutlined />
+                        </ListItemIcon>
+                        <ListItemText primary={'Crea tu cuenta'} />
+                    </ListItem>
+
+
+                    <ListItem button>
+                        <ListItemIcon>
                             <AccountCircleOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Perfil'} />
+                        <ListItemText primary={'Ingresa'} />
                     </ListItem>
 
                     <ListItem button>
                         <ListItemIcon>
                             <ConfirmationNumberOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Mis Ordenes'} />
+                        <ListItemText primary={'Mis Compras'} />
                     </ListItem>
 
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}>
+                    <ListItem button >
                         <ListItemIcon>
-                            <MaleOutlined />
+                            <LocalOfferOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Hombres'} />
+                        <ListItemText primary={'Ofertas'} />
                     </ListItem>
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}>
+                    <ListItem button >
                         <ListItemIcon>
-                            <FemaleOutlined />
+                            <StorefrontOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Mujeres'} />
+                        <ListItemText primary={'Supermercado'} />
                     </ListItem>
 
-                    <ListItem button sx={{ display: { xs: '', sm: 'none' } }}>
+                    <ListItem button >
                         <ListItemIcon>
-                            <EscalatorWarningOutlined />
+                            <CheckroomOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Niños'} />
+                        <ListItemText primary={'Moda'} />
                     </ListItem>
 
 
                     <ListItem button>
                         <ListItemIcon>
-                            <VpnKeyOutlined />
+                            <StoreOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Ingresar'} />
+                        <ListItemText primary={'Vender'} />
                     </ListItem>
 
                     <ListItem button>
                         <ListItemIcon>
-                            <LoginOutlined />
+                            <HelpCenterOutlined />
                         </ListItemIcon>
-                        <ListItemText primary={'Salir'} />
+                        <ListItemText primary={'Ayuda'} />
                     </ListItem>
 
 
-                    {/* Admin */}
-                    <Divider />
-                    <ListSubheader>Admin Panel</ListSubheader>
-
-                    <ListItem button>
-                        <ListItemIcon>
-                            <CategoryOutlined />
-                        </ListItemIcon>
-                        <ListItemText primary={'Productos'} />
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <ConfirmationNumberOutlined />
-                        </ListItemIcon>
-                        <ListItemText primary={'Ordenes'} />
-                    </ListItem>
-
-                    <ListItem button>
-                        <ListItemIcon>
-                            <AdminPanelSettings />
-                        </ListItemIcon>
-                        <ListItemText primary={'Usuarios'} />
-                    </ListItem>
                 </List>
             </Box>
         </Drawer>

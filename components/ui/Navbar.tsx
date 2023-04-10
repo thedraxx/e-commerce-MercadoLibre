@@ -1,13 +1,12 @@
-import NextLink from 'next/link';
-import { AppBar, Badge, Box, Button, FormControl, IconButton, Input, InputLabel, Link, ListItem, Stack, Toolbar, Typography } from '@mui/material';
-import { CardTravelOutlined, ContactMailOutlined, GpsFixed, GpsFixedOutlined, GpsFixedSharp, GpsNotFixedRounded, ImportContactsOutlined, Label, LabelRounded, LocationOnOutlined, MenuOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
+import { Box, Button, Input, InputAdornment, InputLabel, Link, Stack, Typography } from '@mui/material';
+import { LocationOnOutlined, MenuOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
 import Image from 'next/image';
 import { useContext } from 'react';
 import { SideMenuContext } from '../../context';
 
 export const Navbar = () => {
 
-    const { isOpen, handleOpen } = useContext(SideMenuContext)
+    const { handleOpen } = useContext(SideMenuContext)
 
     return (
         <Stack
@@ -87,6 +86,9 @@ export const Navbar = () => {
                     </Box>
                 </Link>
                 {/* LABEL INPUT */}
+
+
+
                 <Box >
                     <InputLabel
                         htmlFor="search"
@@ -94,9 +96,8 @@ export const Navbar = () => {
                             display: { xs: 'none', sm: 'none', md: 'flex', lg: 'flex' },
                             alignItems: 'center',
                             justifyContent: 'center',
-                            padding: '0px',
-                            marginRight: '50px',
                             marginLeft: '50px',
+                            marginRight: '50px',
                         }}
 
                     >
@@ -128,7 +129,15 @@ export const Navbar = () => {
                         />
 
                     </InputLabel  >
+
+
                 </Box>
+
+
+
+
+
+
 
                 <Box
                     sx={{

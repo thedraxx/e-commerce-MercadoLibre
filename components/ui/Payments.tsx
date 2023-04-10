@@ -1,4 +1,4 @@
-import { AddRounded, CreditCard, CreditCardRounded } from '@mui/icons-material'
+import { AddRounded, CreditCard, CreditCardRounded, MoneyOffCsredOutlined, PaymentsOutlined, RequestQuote } from '@mui/icons-material'
 import { Box, Typography } from '@mui/material';
 import React from 'react'
 
@@ -13,7 +13,7 @@ export const Payments = () => {
                 alignItems: 'center',
                 flexDirection: { xs: 'column', sm: 'column', md: 'row', lg: 'row' },
                 backgroundColor: '#ffffff',
-                padding: '25px',
+                padding: '5px',
             }}
         >
 
@@ -32,7 +32,7 @@ export const Payments = () => {
             >
 
 
-                <CreditCard sx={{ fontSize: 30 }} />
+                <CreditCard sx={{ fontSize: 30, color: "#1a81ff" }} />
 
                 <Box
                     sx={{
@@ -48,7 +48,6 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 15,
-                            fontWeight: 'bold',
                             color: '#000000',
                             marginTop: '5px',
                         }}
@@ -59,7 +58,7 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 13,
-                            fontWeight: 'bold',
+                            fontWeight: 300,
                             color: '#1a81ff',
                             marginTop: '5px',
                         }}
@@ -85,7 +84,7 @@ export const Payments = () => {
             >
 
 
-                <CreditCardRounded sx={{ fontSize: 30 }} />
+                <PaymentsOutlined sx={{ fontSize: 30, color: '#367dff' }} />
 
                 <Box
                     sx={{
@@ -101,7 +100,6 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 15,
-                            fontWeight: 'bold',
                             color: '#000000',
                             marginTop: '5px',
 
@@ -114,9 +112,10 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 13,
-                            fontWeight: 'bold',
+                            fontWeight: 300,
                             color: '#1a81ff',
                             marginTop: '5px',
+
                         }}
                     >
                         {` Ver mas  `}
@@ -139,7 +138,7 @@ export const Payments = () => {
             >
 
 
-                <CreditCardRounded sx={{ fontSize: 30 }} />
+                <RequestQuote sx={{ fontSize: 30, color: "#1a81ff" }} />
 
                 <Box
                     sx={{
@@ -155,20 +154,20 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 15,
-                            fontWeight: 'bold',
+
                             color: '#000000',
                             marginTop: '5px',
 
 
                         }}
                     >
-                        {` Tarjetas De Debito  `}
+                        {` Cuotas Sin Tarjeta  `}
                     </Typography>
 
                     <Typography
                         sx={{
                             fontSize: 13,
-                            fontWeight: 'bold',
+                            fontWeight: 300,
                             color: '#1a81ff',
                             marginTop: '5px',
                         }}
@@ -193,7 +192,7 @@ export const Payments = () => {
             >
 
 
-                <CreditCardRounded sx={{ fontSize: 30 }} />
+                <MoneyOffCsredOutlined sx={{ fontSize: 30, color: "#1a81ff" }} />
 
                 <Box
                     sx={{
@@ -209,20 +208,19 @@ export const Payments = () => {
                     <Typography
                         sx={{
                             fontSize: 15,
-                            fontWeight: 'bold',
                             color: '#000000',
                             marginTop: '5px',
 
 
                         }}
                     >
-                        {` Tarjetas De Debito  `}
+                        {` Efectivo  `}
                     </Typography>
 
                     <Typography
                         sx={{
                             fontSize: 13,
-                            fontWeight: 'bold',
+                            fontWeight: 300,
                             color: '#1a81ff',
                             marginTop: '5px',
                         }}
@@ -235,7 +233,7 @@ export const Payments = () => {
             {/* Card 5 */}
             <Box
                 sx={{
-                    width: '100%',
+                    width: '50%',
                     height: '100%',
                     backgroundColor: 'white',
                     display: 'flex',
@@ -243,12 +241,12 @@ export const Payments = () => {
                     alignItems: 'center',
                     flexDirection: 'row',
                     alignContent: 'row',
-                    padding: '31px',
+                    padding: '0px',
                 }}
             >
 
 
-                <AddRounded sx={{ fontSize: 30 }} />
+                <AddRounded sx={{ fontSize: 25, color: "#ffffff", background: '#1a81ff', borderRadius: 20 }} />
 
 
             </Box>

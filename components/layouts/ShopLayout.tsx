@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import Head from 'next/head';
 
-import { Navbar, SideMenu } from '../ui';
+import { Navbar, SideMenu, WarningUI } from '../ui';
 import { Box } from '@mui/material';
 
 
@@ -15,7 +15,7 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
     return (
         <Box
             sx={{
-                background: '#F5F5F5',
+                background: '#ececec',
             }}
         >
             <Head>
@@ -37,6 +37,7 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
 
             <nav>
                 <Navbar />
+
             </nav>
 
             <SideMenu />
@@ -52,7 +53,7 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
 
             {/* Footer */}
             <footer>
-                {/* TODO: mi custom footer */}
+                <WarningUI />
             </footer>
 
         </Box >

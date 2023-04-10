@@ -2,6 +2,7 @@ import 'react-slideshow-image/dist/styles.css';
 import React, { useState } from 'react';
 import { Slide } from 'react-slideshow-image';
 import styles from './ProductSlideshow.module.css';
+import { Box } from '@mui/material';
 
 export const Banner = () => {
 
@@ -21,18 +22,18 @@ export const Banner = () => {
             {
                 arrayImagesBanner.map(image => {
                     return (
-                        <div
+                        <Box
                             className={styles['each-slide']}
                             key={image}
                         >
-                            <div style={{
+                            <Box style={{
                                 backgroundImage: `url(${image})`,
                                 backgroundSize: 'cover',
                                 backgroundPosition: 'center',
                                 backgroundRepeat: 'no-repeat',
                             }}>
-                            </div>
-                        </div>
+                            </Box>
+                        </Box>
                     )
 
                 })

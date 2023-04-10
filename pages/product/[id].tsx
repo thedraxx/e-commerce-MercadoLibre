@@ -1,11 +1,12 @@
-import { Box, Grid, List, ListItem, Typography, ListItemText, MenuItem, Button } from '@mui/material';
+import { Box, Grid, List, ListItem, Typography, MenuItem, Button } from '@mui/material';
 import { ShopLayout } from '../../components/layouts';
 import { ProductSlideshow } from '../../components/products';
 import { GetStaticPaths } from 'next'
 import axios from 'axios';
 import Papa from 'papaparse';
 import { IProduct } from '../../interfaces';
-import { HouseOutlined, Star, TravelExploreOutlined } from '@mui/icons-material';
+import { EmojiEvents, EmojiEventsOutlined, GppGoodOutlined, HouseOutlined, LocalShippingOutlined, Star, UndoOutlined, WorkspacePremium } from '@mui/icons-material';
+import { WarningUI } from '../../components/ui';
 
 interface Props {
     product: IProduct;
@@ -23,10 +24,12 @@ const ProductPage = ({ product }: Props) => {
                 container
                 spacing={2}
                 style={{
-                    marginTop: '100px',
+                    marginTop: '50px',
                     maxWidth: '1440px',
                     background: 'white',
                     borderRadius: '10px',
+                    boxShadow: '0px 0px 10px 0px rgba(0,0,0,0.2)',
+                    padding: '20px',
                 }}
             >
                 <Grid
@@ -214,6 +217,7 @@ const ProductPage = ({ product }: Props) => {
                         border: '1px solid #e0e0e0',
                         borderRadius: '10px',
                         marginBottom: '30px',
+                        padding: '20px',
                     }}
                 >
                     <Box
@@ -229,10 +233,10 @@ const ProductPage = ({ product }: Props) => {
                             padding: '0px',
                         }}
                     >
-                        <TravelExploreOutlined
+                        <LocalShippingOutlined
                             style={{
                                 color: '#05ab55',
-                                fontSize: '30px',
+                                fontSize: '24px',
                                 marginLeft: '0px',
                             }}
                         />
@@ -248,7 +252,7 @@ const ProductPage = ({ product }: Props) => {
                                 variant='subtitle2'
                                 component='h5'
                                 color='#00A650'
-                                sx={{ ml: 1 }}
+                                sx={{ ml: 1, fontWeight: 400 }}
                             >
                                 Envio Gratis a todo el pais
                             </Typography>
@@ -256,7 +260,7 @@ const ProductPage = ({ product }: Props) => {
                                 variant='subtitle2'
                                 component='h6'
                                 color='gray'
-                                sx={{ ml: 1 }}
+                                sx={{ ml: 1, fontWeight: 400 }}
                             >
                                 Conocé los tiempos y las formas de envío.
                             </Typography>
@@ -280,7 +284,7 @@ const ProductPage = ({ product }: Props) => {
                         <HouseOutlined
                             style={{
                                 color: '#00A650',
-                                fontSize: '30px',
+                                fontSize: '24px',
                                 marginLeft: '0px',
                             }}
                         />
@@ -296,7 +300,8 @@ const ProductPage = ({ product }: Props) => {
                                 variant='subtitle2'
                                 component='h5'
                                 color='#00A650'
-                                sx={{ ml: 1 }}
+                                sx={{ ml: 1, fontWeight: 400 }}
+
                             >
                                 Retiro gratis en local del vendedor
                             </Typography>
@@ -304,7 +309,8 @@ const ProductPage = ({ product }: Props) => {
                                 variant='subtitle2'
                                 component='h6'
                                 color='#367dff'
-                                sx={{ ml: 1 }}
+                                sx={{ ml: 1, fontWeight: 400 }}
+
                             >
                                 Más información
                             </Typography>
@@ -450,66 +456,100 @@ const ProductPage = ({ product }: Props) => {
                                     Agregar al carrito
                                 </Typography>
                             </Button>
-
-
                         </Box>
-
-
                         <Box>
-                            <Typography
-                                variant='h2'
-                                color='gray'
-                                sx={{ mt: 4, fontSize: 14 }}
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    alignContent: "center",
+                                    justifyItems: "center",
+                                    width: '100%',
+                                    mt: 4,
+                                }}
                             >
-                                Devolucion gratis. Tenes 30 dias desde que lo recibis.
-                            </Typography>
+                                <UndoOutlined style={{ color: '#bdbdbd', fontSize: '22px', marginRight: '5px' }} />
 
-                            <Typography
-                                variant='h2'
-                                color='gray'
-                                sx={{ mt: 4, fontSize: 14 }}
+                                <Typography
+                                    variant='h2'
+                                    color='gray'
+                                    sx={{ fontSize: 14 }}
+                                >
+                                    Devolucion gratis. Tenes 30 dias desde que lo recibis.
+                                </Typography>
+                            </Box>
+
+
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    alignContent: "center",
+                                    justifyItems: "center",
+                                    width: '100%',
+                                    mt: 4,
+                                }}
                             >
-                                Compra Protegida, recibi el producto que esperabas o te devolvemos tu dinero.
-                            </Typography>
+                                <GppGoodOutlined style={{ color: '#bdbdbd', fontSize: '22px', marginRight: '5px' }} />
 
-                            <Typography
-                                variant='h2'
-                                color='gray'
-                                sx={{ mt: 4, fontSize: 14 }}
+                                <Typography
+                                    variant='h2'
+                                    color='gray'
+                                    sx={{ fontSize: 14 }}
+                                >
+                                    Compra Protegida, recibi el producto que esperabas o te devolvemos tu dinero.
+                                </Typography>
+                            </Box>
+
+
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    alignContent: "center",
+                                    justifyItems: "center",
+                                    width: '100%',
+                                    mt: 4,
+                                }}
                             >
-                                Mercado Puntos, sumas 1.000 puntos.
-                            </Typography>
+                                <EmojiEventsOutlined style={{ color: '#bdbdbd', fontSize: '22px', marginRight: '5px' }} />
 
-                            <Typography
-                                variant='h2'
-                                color='gray'
-                                sx={{ mt: 4, fontSize: 14 }}
+                                <Typography
+                                    variant='h2'
+                                    color='gray'
+                                    sx={{ fontSize: 14 }}
+                                >
+                                    Mercado Puntos, sumas 1.000 puntos.                                </Typography>
+                            </Box>
+
+
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'row',
+                                    alignItems: 'center',
+                                    alignContent: "center",
+                                    justifyItems: "center",
+                                    width: '100%',
+                                    mt: 4,
+                                }}
                             >
-                                12 meses de garantia por defecto de fabrica.
-                            </Typography>
+                                <WorkspacePremium style={{ color: '#bdbdbd', fontSize: '22px', marginRight: '5px' }} />
 
-
+                                <Typography
+                                    variant='h2'
+                                    color='gray'
+                                    sx={{ fontSize: 14 }}
+                                >
+                                    12 meses de garantía de fábrica.                               </Typography>
+                            </Box>
                         </Box>
-
-
-
                     </Box>
-
-
-
-
                 </Grid>
-
-
-
-
-
             </Grid>
-
-
-
-
-
         </ShopLayout >
     )
 }

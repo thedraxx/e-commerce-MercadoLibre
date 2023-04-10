@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
 import { IProduct } from '../../interfaces';
 import Image from 'next/image';
 import { Box, Button } from '@mui/material';
-import Zoom from '@mui/material/Zoom';
+
 interface Props {
     product: IProduct;
 }
@@ -12,23 +12,16 @@ export const ProductSlideshow = ({ product }: Props) => {
 
     const [counterImage, setCounterImage] = useState(0);
 
-
     const manageImage = (index: number) => {
-        console.log(index);
         setCounterImage(index);
     }
-
 
     return (
         <Box
             sx={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                bgcolor: 'background.paper',
-                overflow: 'hidden',
+
+                position: 'sticky',
+                top: '0',
             }}
         >
             <Box
@@ -36,10 +29,7 @@ export const ProductSlideshow = ({ product }: Props) => {
                     width: '100%',
                     height: '100%',
                     display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
                     bgcolor: 'background.paper',
-                    flexDirection: 'row',
                 }}
             >
                 <Box
@@ -51,6 +41,7 @@ export const ProductSlideshow = ({ product }: Props) => {
                         alignItems: 'center',
                         bgcolor: 'background.paper',
                         flexDirection: 'column',
+
                     }}
                 >
                     {
@@ -69,6 +60,7 @@ export const ProductSlideshow = ({ product }: Props) => {
                                         flexDirection: 'column',
                                         borderRadius: '10px',
                                         border: '1px solid #e0e0e0',
+
                                     }}
                                 >
                                     <Button
@@ -98,15 +90,24 @@ export const ProductSlideshow = ({ product }: Props) => {
                         })
                     }
                 </Box>
-                <Image
-                    src={
-                        [product.imagen1, product.imagen2, product.imagen3, product.imagen4][counterImage] || ''
-                    }
-                    alt={product.nombre}
-                    width={2000}
-                    height={2000}
-                    objectFit='contain'
-                />
+                <Box
+                    style={{
+                        position: 'relative',
+                    }}
+                >
+
+
+                    <Image
+                        src={
+                            [product.imagen1, product.imagen2, product.imagen3, product.imagen4][counterImage] || ''
+                        }
+                        alt={product.nombre}
+                        width={2000}
+                        height={2000}
+                        objectFit='contain'
+                    />
+                </Box>
+
             </Box>
         </Box>
     )

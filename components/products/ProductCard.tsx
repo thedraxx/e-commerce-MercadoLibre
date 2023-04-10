@@ -90,6 +90,17 @@ export const ProductCard = ({ product }: Props) => {
                     >
                         {`$${product.precio}`}
                     </Typography>
+
+                    <Typography
+
+                        sx={{
+                            fontSize: 'sm: 14px, md: 16px, lg: 18px, xl: 50px',
+                            marginLeft: '25px',
+                            color: '#00A650'
+                        }}
+                    >
+                        Envios Gratis
+                    </Typography>
                 </Box>
             </Card>
 
