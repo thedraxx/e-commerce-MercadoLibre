@@ -13,7 +13,6 @@ Rebuild Node Modules and run NEXT.JS
 
 ## Fill the database with test information
 
-
 <h1 align="center"> Hello Everyone 🪐👋</h1>
 
 ## 🤖 About App:
@@ -23,8 +22,7 @@ This is a MercadoLibre-Challenge (UI) using Google Sheet as a database, the app 
 
 ## 🎥 A little video of the WEB:
 
-
-
+https://user-images.githubusercontent.com/55867157/231150833-ba3ea1c4-2834-4da5-a5e0-304f59337674.mp4
 
 ## 📱 Photos of the WEB:
 
