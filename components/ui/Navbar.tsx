@@ -129,15 +129,7 @@ export const Navbar = () => {
                         />
 
                     </InputLabel  >
-
-
                 </Box>
-
-
-
-
-
-
 
                 <Box
                     sx={{
@@ -148,7 +140,6 @@ export const Navbar = () => {
                         paddingLeft: '30px',
                     }}
                 >
-
 
                     <Box
                         marginRight={2}

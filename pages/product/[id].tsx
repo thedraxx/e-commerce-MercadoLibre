@@ -6,6 +6,7 @@ import axios from 'axios';
 import Papa from 'papaparse';
 import { IProduct } from '../../interfaces';
 import { EmojiEventsOutlined, GppGoodOutlined, HouseOutlined, LocalShippingOutlined, Star, UndoOutlined, WorkspacePremium } from '@mui/icons-material';
+import PreguntasYRespuestas from 'components/ui/PreguntasYRespuestas';
 
 interface Props {
     product: IProduct;
@@ -24,6 +25,7 @@ const ProductPage = ({ product }: Props) => {
                 spacing={2}
                 style={{
                     marginTop: '50px',
+                    marginBottom: '50px',
                     maxWidth: '1440px',
                     background: 'white',
                     borderRadius: '10px',
@@ -547,6 +549,7 @@ const ProductPage = ({ product }: Props) => {
                         </Box>
                     </Box>
                 </Grid>
+                <PreguntasYRespuestas />
             </Grid>
         </ShopLayout >
     )
