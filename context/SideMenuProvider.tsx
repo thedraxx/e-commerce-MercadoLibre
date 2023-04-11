@@ -1,5 +1,7 @@
 import { useReducer } from 'react';
-import { SideMenuContext, sideMenuReducer } from './';
+import { SideMenuContext } from './';
+import { sideMenuReducer } from './sideMenuReducer';
+
 
 export interface SideMenuState {
     isOpen: boolean;
