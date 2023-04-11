@@ -22,7 +22,10 @@ This is a MercadoLibre-Challenge (UI) using Google Sheet as a database, the app 
 
 ## 🎥 A little video of the WEB:
 
-https://user-images.githubusercontent.com/55867157/231150833-ba3ea1c4-2834-4da5-a5e0-304f59337674.mp4
+
+https://user-images.githubusercontent.com/55867157/231173840-69c46911-6abc-4fa4-9b29-e11deb492c9a.mp4
+
+
 
 ## 📱 Photos of the WEB:
 
