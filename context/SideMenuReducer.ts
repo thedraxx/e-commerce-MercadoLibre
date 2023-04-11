@@ -1,4 +1,4 @@
-import { SideMenuState } from "./";
+import { SideMenuState } from ".";
 
 type SideMenuActionType = {
   type: "[SideMenu] - handleChange";

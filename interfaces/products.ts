@@ -5,6 +5,7 @@ export interface IProduct {
   descripcion: string;
   cantidad: number;
   Incluye: string;
+  categoria: string;
   imagen1?: string;
   imagen2?: string;
   imagen3?: string;

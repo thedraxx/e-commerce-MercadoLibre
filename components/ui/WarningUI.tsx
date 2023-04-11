@@ -1,5 +1,4 @@
 import { Box } from '@mui/material'
-import Image from 'next/image'
 import React from 'react'
 
 export const WarningUI = () => {
@@ -14,12 +13,10 @@ export const WarningUI = () => {
                 padding: '1rem',
                 fontSize: '1.5rem',
                 fontWeight: 'bold',
-                marginTop: '3rem'
+                marginTop: '4rem'
             }}
         >
             ¡Atención! Este sitio es un clon de MercadoLibre, no es oficial.
-
-
         </Box>
     )
 }

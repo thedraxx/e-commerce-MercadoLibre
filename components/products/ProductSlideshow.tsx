@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import 'react-slideshow-image/dist/styles.css';
 import { IProduct } from '../../interfaces';
 import Image from 'next/image';

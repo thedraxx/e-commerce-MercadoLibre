@@ -1,13 +1,11 @@
-import { Box, Divider, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText, ListSubheader } from "@mui/material"
-import { AccountCircleOutlined, AdminPanelSettings, CategoryOutlined, CheckroomOutlined, ConfirmationNumberOutlined, EscalatorWarningOutlined, FemaleOutlined, GroupAddOutlined, HelpCenterOutlined, LocalGroceryStoreOutlined, LocalOfferOutlined, LoginOutlined, MaleOutlined, SearchOutlined, StoreOutlined, Storefront, StorefrontOutlined, VpnKeyOutlined } from "@mui/icons-material"
+import { Box, Drawer, IconButton, Input, InputAdornment, List, ListItem, ListItemIcon, ListItemText } from "@mui/material"
+import { AccountCircleOutlined, CheckroomOutlined, ConfirmationNumberOutlined, GroupAddOutlined, HelpCenterOutlined, LocalOfferOutlined, SearchOutlined, StoreOutlined, StorefrontOutlined } from "@mui/icons-material"
 import { useContext } from "react"
 import { SideMenuContext } from "../../context"
 
 
 export const SideMenu = () => {
     const { isOpen, handleOpen } = useContext(SideMenuContext)
-
-    console.log(isOpen)
 
     return (
         <Drawer

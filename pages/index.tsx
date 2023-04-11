@@ -1,12 +1,11 @@
 import { GetStaticProps } from 'next'
-import { Banner, Payments, WarningUI } from '../components/ui';
+import { Banner } from '../components/ui';
 import { ShopLayout } from '../components/layouts';
 import { ProductList } from '../components/products';
 import { IProduct } from '../interfaces';
 import { Box, Typography } from '@mui/material';
 import Papa from 'papaparse';
 import axios from 'axios';
-import { SideMenuProvider } from '../context';
 
 interface props {
   productos: IProduct[]
@@ -25,8 +24,6 @@ const Home = ({ productos }: props) => {
       >
         <Banner />
       </Box>
-
-      <Payments />
       <Typography variant='h1' component='h1' sx={{ mt: 5 }}>Ofertas</Typography>
       <Typography variant='h2' sx={{ mb: 1 }}>Todos los productos</Typography>
       <ProductList
@@ -55,5 +52,6 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
     props: {
       productos: ProductsListParsed.data
     },
+    revalidate: 60 * 60 * 24 // 24 horas
   }
 }

@@ -5,8 +5,7 @@ import { GetStaticPaths } from 'next'
 import axios from 'axios';
 import Papa from 'papaparse';
 import { IProduct } from '../../interfaces';
-import { EmojiEvents, EmojiEventsOutlined, GppGoodOutlined, HouseOutlined, LocalShippingOutlined, Star, UndoOutlined, WorkspacePremium } from '@mui/icons-material';
-import { WarningUI } from '../../components/ui';
+import { EmojiEventsOutlined, GppGoodOutlined, HouseOutlined, LocalShippingOutlined, Star, UndoOutlined, WorkspacePremium } from '@mui/icons-material';
 
 interface Props {
     product: IProduct;
@@ -115,7 +114,7 @@ const ProductPage = ({ product }: Props) => {
                                 color='#367dff'
                                 sx={{ ml: 1, pl: 1, pr: 1, borderRadius: 1, width: 'fit-content' }}
                             >
-                                3º en Consolas
+                                {Math.floor(Math.random() * 10)}º en {product.categoria}
                             </Typography>
                         </Box>
                         <Typography
@@ -127,9 +126,8 @@ const ProductPage = ({ product }: Props) => {
                             component='h4'
                             color="#00A650"
                             sx={{ mt: 1, fontSize: 15, fontWeight: 100 }}
-                        >Mismo precio en 6 cuotas de $16583
+                        >Mismo precio en 6 cuotas de ${Math.round(product.precio / 6 * 1000)}
                         </Typography>
-
                         <Box
                             sx={{
                                 display: 'flex',

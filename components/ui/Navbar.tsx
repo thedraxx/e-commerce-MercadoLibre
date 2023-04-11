@@ -1,8 +1,8 @@
-import { Box, Button, Input, InputAdornment, InputLabel, Link, Stack, Typography } from '@mui/material';
-import { LocationOnOutlined, MenuOutlined, Search, ShoppingCartOutlined } from '@mui/icons-material';
-import Image from 'next/image';
+import { Box, Button, Input, InputLabel, Link, Stack, Typography } from '@mui/material';
+import { LocationOnOutlined, MenuOutlined, ShoppingCartOutlined } from '@mui/icons-material';
 import { useContext } from 'react';
 import { SideMenuContext } from '../../context';
+import Image from 'next/image';
 
 export const Navbar = () => {
 

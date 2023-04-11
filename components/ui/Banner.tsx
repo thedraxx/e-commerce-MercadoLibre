@@ -1,5 +1,5 @@
 import 'react-slideshow-image/dist/styles.css';
-import React, { useState } from 'react';
+import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import styles from './ProductSlideshow.module.css';
 import { Box } from '@mui/material';

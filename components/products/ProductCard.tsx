@@ -1,5 +1,4 @@
 import { useMemo, useState } from 'react';
-import NextLink from 'next/link';
 import { Grid, Card, CardActionArea, Box, Typography, Link } from '@mui/material'
 import Image from 'next/image';
 import { IProduct } from '../../interfaces';
@@ -21,7 +20,8 @@ export const ProductCard = ({ product }: Props) => {
     return (
         <Grid item
             xs={12}
-            sm={3}
+            sm={6}
+            md={3}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
@@ -103,7 +103,6 @@ export const ProductCard = ({ product }: Props) => {
                     </Typography>
                 </Box>
             </Card>
-
         </Grid>
     )
 }

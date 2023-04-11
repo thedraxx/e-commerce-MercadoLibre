@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Head from 'next/head';
 
 import { Navbar, SideMenu, WarningUI } from '../ui';
-import { Box } from '@mui/material';
+import { Box, Paper } from '@mui/material';
 
 
 interface Props {
@@ -52,9 +52,20 @@ export const ShopLayout: FC<Props> = ({ children, title, pageDescription, imageF
             </main>
 
             {/* Footer */}
-            <footer>
+            <Paper
+                sx={{
+                    position: 'relative',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    zIndex: 1000,
+                    background: '#ececec',
+                    padding: '10px 0px',
+                }}
+
+            >
                 <WarningUI />
-            </footer>
+            </Paper>
 
         </Box >
     )
