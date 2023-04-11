@@ -26,6 +26,12 @@ https://user-images.githubusercontent.com/55867157/231150833-ba3ea1c4-2834-4da5-
 
 ## 📱 Photos of the WEB:
 
+![1](https://user-images.githubusercontent.com/55867157/231151131-4e651a4a-8566-4d65-94e5-9e2014168c7c.png)
+
+
+![2](https://user-images.githubusercontent.com/55867157/231151140-d0e308a5-3d61-4afe-988f-d64e38aba535.png)
+
+
 <br> The app is made with the following technologies:</br>
 
 ```
