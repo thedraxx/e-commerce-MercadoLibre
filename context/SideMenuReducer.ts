@@ -4,7 +4,7 @@ type SideMenuActionType = {
   type: "[SideMenu] - handleChange";
 };
 
-export const sideMenuReducer = (
+export const SideMenuReducer = (
   state: SideMenuState,
   action: SideMenuActionType
 ): SideMenuState => {

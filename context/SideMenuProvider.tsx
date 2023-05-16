@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
-import { SideMenuContext } from './';
-import { sideMenuReducer } from './sideMenuReducer';
+import { SideMenuReducer } from './SideMenuReducer';
+import { SideMenuContext } from './SideMenuContext';
 
 
 export interface SideMenuState {
@@ -17,7 +17,7 @@ interface Props {
 
 export const SideMenuProvider = ({ children }: Props) => {
 
-    const [state, dispatch] = useReducer(sideMenuReducer, SideMenu_INITIAL_STATE)
+    const [state, dispatch] = useReducer(SideMenuReducer, SideMenu_INITIAL_STATE)
 
 
     const handleOpen = () => {
